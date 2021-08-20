@@ -1,0 +1,75 @@
+﻿@model Volunteering.Models.Organizacija
+
+@{
+    ViewBag.Title = "Details";
+
+    if (Request.UrlReferrer != null)
+    {
+        string returnURL = Request.UrlReferrer.ToString();
+        ViewBag.ReturnURL = returnURL;
+    }
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<br />
+<br />
+
+<br />
+<br/>
+
+<div class="container" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">
+   
+    <div class="row">
+        <div class="col-xs-6">
+            <img src="@Model.Slika" style="height:404px; width:450px;background-color:white ;border-radius:145px" />
+
+        </div>
+        <div class="col-xs-6">
+            <div style="background-color:rgb(13,151,250,0.3); border:double; border-color:white;border-radius: 22px;">
+                <h1 style="color:white; text-shadow:2px 2px #90A7AC;color:dodgerblue; text-align: center;"><i>@Model.Ime</i></h1>
+
+                <h1 style="color:white; text-shadow:2px 2px #90A7AC; text-align: center;"><i>@Model.Opis</i></h1>
+                <br />
+                <br />
+
+                <h2 style="color:Highlight;margin-left: 126px;">rating: 4 </h2>
+                <div style="font-size: 30px;margin-left: 114px;margin-top: -48px;text-align:center">
+
+                    <span class="fa fa-star checked" style="color: #F1E85C;"></span>
+                    <span class="fa fa-star checked" style="color: #F1E85C;"></span>
+                    <span class="fa fa-star checked" style="color: #F1E85C;"></span>
+                    <span class="fa fa-star checked" style="color: #F1E85C;"></span>
+                    <span class="fa fa-star-o"></span>
+                </div>
+            </div>
+
+            <br />
+            <br />
+
+
+
+
+        </div>
+
+        <br />
+        <br />
+        <br />
+        <div style="text-align:center;">
+            <a href="@ViewBag.ReturnURL" class="btn btn-default" style="font-size:18px; text-align:end">Назад</a>
+
+            <a href="~/Prijavas/Create" class="btn btn-danger" style="font-size: 36px; padding: 0px 40px;">Стани член</a>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<br/>
+<br/>
+<br/>
+@*<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+</p>
+*@

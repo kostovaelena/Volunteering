@@ -1,0 +1,121 @@
+﻿@model Volunteering.Models.Doniraj
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<br />
+<br />
+<div class="breadcrumb" style="font-size:20px; border:solid; background-color:azure; border-color:white">
+    @Html.ActionLink("Home", "Index", "Home")
+    @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+    {
+        @:> @ViewContext.RouteData.Values["controller"].ToString()
+    }
+    @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+    }
+</div>
+
+<br />
+<br />
+<br />
+
+<div class="container" style="background-color:rgb(13,151,250,0.3); border:double; border-color:white;border-radius: 22px; margin-left:22px; color: Highlight; text-align: center; font-family: 'Trebuchet MS' , 'Lucida Sans Unicode' , 'Lucida Grande' , 'Lucida Sans' , Arial, sans-serif; font-size: 40px;">
+    <h1 style="color: white; text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 40px;">ДОНИРАЈ</h1>
+
+    <br />
+    <br />
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+
+            <div class="form-group">
+                <div class="col-md-6">
+                    <h3 style="color:white ;margin-left: 97px; font-size:34px; text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">Изберете организација</h3>
+                </div>
+                <div class="col-md-6" style=" margin-top: -41px; margin-left: 522px;">
+                    @Html.DropDownList("organisations", new List<SelectListItem>
+                 {
+                     new SelectListItem{ Text="Организации", Value = "0" , Disabled = true, Selected = true},
+                     new SelectListItem{ Text="Биди Зелен", Value = "1" },
+                     new SelectListItem{ Text="Ајде Македонија", Value = "2" },
+                     new SelectListItem{ Text="Не биди ѓубре", Value = "3" },
+                     new SelectListItem{ Text="Еко - логик", Value = "4" },
+                     new SelectListItem{ Text="Е.Д.Е.Н", Value = "5" },
+                     new SelectListItem{ Text="Охрид SOS", Value = "6" },
+                     new SelectListItem{ Text="Meѓаши", Value = "7" },
+                     new SelectListItem{ Text="Ин Виво Скопје", Value = "8" },
+                     new SelectListItem{ Text="Креактив", Value = "9" },
+                     new SelectListItem{ Text="НаТочак", Value = "10" },
+                     new SelectListItem{ Text="КРИК", Value = "11" },
+                     new SelectListItem{ Text="Младински Образовен Форум", Value = "12" },
+
+                     new SelectListItem{ Text="Младите можат", Value = "13" },
+                     new SelectListItem{ Text="Секој студент", Value = "14" },
+                     new SelectListItem{ Text="Црвен Крст", Value = "15" },
+                     new SelectListItem{ Text="Вистински дела на љубезност", Value = "16" },
+                     new SelectListItem{ Text="Ретвитни оброк", Value = "17" },
+                     new SelectListItem{ Text="Ц.С.И.Надеж", Value = "18" },
+                     new SelectListItem{ Text="Eestec", Value = "19" },
+                     new SelectListItem{ Text="SmartUp", Value = "20" },
+                     new SelectListItem{ Text="WeTalkIT", Value = "21" },
+                     new SelectListItem{ Text="Споделено знаење", Value = "22" },
+                     new SelectListItem{ Text="Јава Корисничка група", Value = "23" },
+                     new SelectListItem{ Text="Х.Е.Р.А", Value = "24" },
+
+                     new SelectListItem{ Text="Зона - Кавадарци", Value = "25" },
+                     new SelectListItem{ Text="ЕМСА - Македонија", Value = "26" },
+                     new SelectListItem{ Text="Анима Мунди", Value = "27" },
+                     new SelectListItem{ Text="Анималиа", Value = "28" },
+                     new SelectListItem{ Text="Кане Корзо", Value = "29" },
+                     new SelectListItem{ Text="Ние За Животните", Value = "30" },
+                     new SelectListItem{ Text="ЦЕФЕ Македонија", Value = "31" },
+                     new SelectListItem{ Text="Буден Театар", Value = "32" },
+                     new SelectListItem{ Text="Џифони", Value = "33" },
+                     new SelectListItem{ Text="CRE8IVE8", Value = "34" },
+                     new SelectListItem{ Text="615 Асоцијација", Value = "35" },
+                     new SelectListItem{ Text="МАКЕДОКС", Value = "36" },
+                     new SelectListItem{ Text="Македонска Кјубинг Асоцијација", Value = "37" },
+                     new SelectListItem{ Text="Клуб на Оратори", Value = "38" },
+                     new SelectListItem{ Text="Младински Образовен Форум", Value = "39" },
+                 }, new { @class = "form-control" })
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+
+        <div class="col-md-6">
+            <h3 style="color: white;margin-left: 97px; font-size:34px;  text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">Сума</h3>
+        </div>
+        <div class="col-md-6" style=" margin-top: -41px; margin-left: 508px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+            @Html.EditorFor(model => model.Suma, new { htmlAttributes = new { @class = "form-control", @min = 0, @max = 1000000, } })
+
+
+            <h3 style=" margin-left: 80px; margin-top: -29px;color:white">ден.</h3>
+        </div>
+        <div style="font-size:18px;margin-top: 83px; margin-left: 132px;">
+            @Html.ValidationMessageFor(model => model.Suma, "", new { @class = "text-danger" })
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input id="redirect" type="submit" value="Донирај" onclick='return confirm("Дали сте сигурни?")' class="btn btn-primary" style="font-size:20px" />
+            </div>
+        </div>
+        <br />
+
+    }
+
+
+</div>
+

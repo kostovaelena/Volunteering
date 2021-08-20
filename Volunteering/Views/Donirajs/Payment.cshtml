@@ -1,0 +1,158 @@
+﻿@model Volunteering.Models.Doniraj
+
+@*@{
+        ViewBag.Title = "Payment";
+    }*@
+
+<br />
+<br />
+
+<div class="breadcrumb" style="font-size:20px; border:solid; background-color:azure; border-color:white">
+    @Html.ActionLink("Home", "Index", "Home")
+    @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+    {
+        @:> @ViewContext.RouteData.Values["controller"].ToString()
+    }
+    @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+    }
+</div>
+
+<br />
+<br />
+
+
+<div class="container" style="background-color: rgb(13,151,250,0.3);
+        border: double;
+        border-color: white;
+        border-radius: 22px;
+
+        color: white;
+        text-align: center;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <h1>ПЛАЌАЊЕ</h1>
+        </div>
+    </div>
+
+
+    <hr style="width: 48%; height: 5px;" , size="3">
+
+    <div class="row justify-content-center">
+
+        <div class="progress" style=" height: 41px; width: 546px; margin-left: 312px; ">
+            <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width: 80%; font-size: 22px;" aria-valuenow="20"
+                 aria-valuemin="0" aria-valuemax="100"><h2 style=" margin-top: 4px;">Payment</h2></div>
+        </div>
+
+    </div>
+
+
+    <hr style="width: 48%; height: 5px;" , size="3">
+
+    <br />
+
+    <form>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="nameOnCard" style="font-size: 25px; margin-left: -95px;">Name on Card</label>
+                    <input type="text" style="margin-left: 450px;" class="form-control" id="name">
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="cardNumber" style="font-size: 25px; margin-left: -95px;">Card Number</label>
+                    <input type="text" style="margin-left: 450px;" class="form-control" id="number">
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="billingAddress" style="font-size: 25px; margin-left: -95px;">Billing Address</label>
+                    <input type="text" style="margin-left: 450px;" class="form-control" id="address">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center">
+            <div class="row">
+                <div class="col-md-2">
+                    <label for="cvc" style="font-size: 25px; margin-left: 311px;">CVC</label>
+                </div>
+                <div class="col-md-2">
+                    <label for="expiration" style="font-size: 25px; margin-left: 331px;">Expiration</label>
+                </div>
+            </div>
+
+            <div class="row" style=" margin-left: 294px;">
+                <div class="col-md-3">
+                    <input type="text" class="form-control" id="Cvc" placeholder="ex. 311">
+                </div>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" id="exp" placeholder="MM">
+                </div>
+                <div class="col-md-3" style="margin-top: -44px;">
+                    <input type="text" class="form-control" id="address" style="margin-top:44px" placeholder="YYYY">
+                </div>
+            </div>
+        </div>
+
+        <br />
+
+        <hr style="width: 48%; height: 5px;" , size="3">
+
+        <br />
+
+        <div class="row justify-content-center">
+
+            <div h5 style="background: white;
+                color: rgb(96, 190, 96);
+                width: 234px;
+                text-align: center;
+                font-size: 20px;
+                border-radius: 7px;
+                margin-left: 467px;">
+                <b>Вкупно:  @ViewBag.Suma ден.</b>
+
+            </div>
+
+        </div>
+
+        <br />
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+
+                <input type="submit" id="redirect" value="Плати" class="btn btn-primary" onclick="return alert('Вашата донација беше успешна. Ви благодариме !')" style="font-size: 26px; width: 540px;" />
+
+            </div>
+        }
+
+        <br />
+    </form>
+
+
+
+</div>
+
+<script src=".js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+@*<script>
+        $('#redirect').onclick(function () {
+            window.location = "@Url.Action("Index", "Home")";
+        });
+    </script>
+*@
+

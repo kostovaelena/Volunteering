@@ -1,0 +1,56 @@
+﻿@model Volunteering.Models.Forum
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+<br />
+<br />
+<div class="container" style="background-color:rgb(13,151,250,0.3); border:double; border-color:white;border-radius: 22px;">
+
+    <h1 style="color: white; text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 40px;">ВНЕСИ КОМЕНТАР</h1>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                @*            @Html.LabelFor(model => model.Ime, htmlAttributes: new { @class = "control-label col-md-2" })
+                *@            <div class="col-md-10">
+                    @Html.EditorFor(model => model.Ime, new
+                    {
+                        htmlAttributes = new
+                        {
+                            @class = "form-control",
+                   placeholder = "Your Name"
+                        }
+                    })
+                    @Html.ValidationMessageFor(model => model.Ime, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @*            @Html.LabelFor(model => model.Comment, htmlAttributes: new { @class = "control-label col-md-2" })
+                *@            <div class="col-md-10">
+                    @Html.EditorFor(model => model.Comment, new { htmlAttributes = new { @class = "form-control", style = "width: 1140px;", placeholder = "Your Comment" } })
+                    @Html.ValidationMessageFor(model => model.Comment, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-2">
+                    <input type="submit" value="Зачувај" style="font-size: 25px;" class="btn btn-success" />
+                </div>
+            </div>
+        </div>
+
+    }
+ 
+@*    <a href="~/Forum/Index" class="btn btn-default" style="font-size: 18px; margin-left: 11px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">heh</a>
+*@
+</div>

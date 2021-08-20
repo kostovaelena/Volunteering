@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Volunteering.Models.Kategorija>
+@{
+    ViewBag.Title = "Tehnologija";
+}
+
+<br />
+<br />
+<div class="breadcrumb" style="font-size:20px; border:solid; background-color:azure; border-color:white">
+    @Html.ActionLink("Home", "Index", "Home")
+    @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
+    }
+    @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+    }
+</div>
+<br />
+
+
+<div class="container" style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+
+    <h1 style="color: Highlight; text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 40px;">ТЕХНОЛОГИЈА</h1>
+    <br />
+    <br />
+
+
+    <div class="row">
+        <div class="col-xs-3">
+            <a class="nb" href="~/Organizacijas/Details/20">
+                <img src="data:image/png;base64,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" alt="Snow" style="background-color:white;height: 240px; width: 273px;  border-radius: 10px;  ">
+
+            </a>
+        </div>
+
+        <div class="col-xs-3">
+            <a class="nb" href="~/Organizacijas/Details/21">
+                <img src="data:image/png;base64,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" alt="Snow" style="background-color: white; height: 240px; width: 273px; border-radius: 10px; ">
+
+            </a>
+        </div>
+
+        <div class="col-xs-3">
+            <a class="nb" href="~/Organizacijas/Details/22">
+                <img src="https://volontiraj.mk/images/organisations/wetalkit.jpg" alt="Snow" style="height: 240px; width: 273px;  border-radius: 10px; ">
+
+            </a>
+        </div>
+        <div class="col-xs-3">
+            <a class="nb" href="~/Organizacijas/Details/23">
+                <img src="https://volontiraj.mk/images/organisations/spodeliznaenje.jpg" alt="Snow" style="background-color: white; height: 240px; width: 273px; border-radius: 10px; ">
+
+            </a>
+        </div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="col-xs-3">
+            <a class="nb" href="~/Organizacijas/Details/24">
+                <img src="https://pbs.twimg.com/profile_images/1112717627/logo_jugmk_scaled_2_.jpg" alt="Snow" style="height: 240px; width: 273px;  border-radius: 10px; ">
+
+            </a>
+        </div>
+
+    </div>
+    </div>
+
+    
