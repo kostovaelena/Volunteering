@@ -83,18 +83,6 @@ C:\Users\x\Desktop\Volunteering\Volunteering\bin\EntityFramework.xml
 C:\Users\x\Desktop\Volunteering\Volunteering\bin\EntityFramework.SqlServer.xml
 C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.initial.resources
 C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.csproj.GenerateResource.cache
-C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.angazman2.resources
-C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.going.resources
-C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.update.resources
-C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.opis.resources
-C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.pak.resources
-C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.update2.resources
-C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.eko.resources
-C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.prijava.resources
-C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.staro.resources
-C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.orggg.resources
-C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.aman.resources
-C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.doniraj.resources
 C:\Users\x\Desktop\Volunteering\Volunteering\bin\NaCl.dll
 C:\Users\x\Desktop\Volunteering\Volunteering\bin\PusherServer.dll
 C:\Users\x\Desktop\Volunteering\Volunteering\bin\System.Buffers.dll
@@ -108,6 +96,4 @@ C:\Users\x\Desktop\Volunteering\Volunteering\bin\System.Memory.xml
 C:\Users\x\Desktop\Volunteering\Volunteering\bin\System.Numerics.Vectors.xml
 C:\Users\x\Desktop\Volunteering\Volunteering\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\x\Desktop\Volunteering\Volunteering\bin\System.ValueTuple.xml
-C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.forum.resources
-C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.date.resources
-C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.again.resources
+C:\Users\x\Desktop\Volunteering\Volunteering\obj\Debug\Volunteering.Migrations.njd.resources

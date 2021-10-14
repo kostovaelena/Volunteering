@@ -1,0 +1,81 @@
+﻿@model Volunteering.Models.Prijava
+
+@{
+    ViewBag.Title = "Details";
+
+    if (Request.UrlReferrer != null)
+    {
+        string returnURL = Request.UrlReferrer.ToString();
+        ViewBag.ReturnURL = returnURL;
+    }
+}
+
+<br />
+<br />
+<div class="breadcrumb" style="font-size:20px; border:solid; background-color:azure; border-color:white">
+    @Html.ActionLink("Home", "Index", "Home")
+    @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+    {
+        @:> @ViewContext.RouteData.Values["controller"].ToString()
+    }
+    @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+    }
+</div>
+<br />
+<h2 style="text-align:center;color:Highlight;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">Пријава за членство во организацијата </h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="form-horizontal" style="color:Highlight;font-size:18px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;" />
+
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Ime, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Ime, new { htmlAttributes = new { @class = "form-control", placeholder = "Петар" } })
+            @Html.ValidationMessageFor(model => model.Ime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Prezime, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Prezime, new { htmlAttributes = new { @class = "form-control", placeholder = "Петровски" } })
+            @Html.ValidationMessageFor(model => model.Prezime, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "petar99@yahoo.com" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Telefon, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Telefon, new { htmlAttributes = new { @class = "form-control", placeholder = "070/555-777" } })
+            @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <a href="@ViewBag.ReturnURL" class="btn btn-default" style="margin-left:11px;font-size:18px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Назад</a>
+
+            <input type="submit" id="btn" value="Поднеси" style="font-size:18px" onclick='return confirm("Дали сте сигурни?")' class="btn btn-danger" />
+        </div>
+    </div>
+
+}
+

@@ -164,65 +164,9 @@
     <Compile Include="Migrations\202108141157466_initial.Designer.cs">
       <DependentUpon>202108141157466_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202108141546364_angazman2.cs" />
-    <Compile Include="Migrations\202108141546364_angazman2.Designer.cs">
-      <DependentUpon>202108141546364_angazman2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108141610215_going.cs" />
-    <Compile Include="Migrations\202108141610215_going.Designer.cs">
-      <DependentUpon>202108141610215_going.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108161337035_update.cs" />
-    <Compile Include="Migrations\202108161337035_update.Designer.cs">
-      <DependentUpon>202108161337035_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108161443344_opis.cs" />
-    <Compile Include="Migrations\202108161443344_opis.Designer.cs">
-      <DependentUpon>202108161443344_opis.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108161943159_pak.cs" />
-    <Compile Include="Migrations\202108161943159_pak.Designer.cs">
-      <DependentUpon>202108161943159_pak.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108162006006_update2.cs" />
-    <Compile Include="Migrations\202108162006006_update2.Designer.cs">
-      <DependentUpon>202108162006006_update2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108162122175_eko.cs" />
-    <Compile Include="Migrations\202108162122175_eko.Designer.cs">
-      <DependentUpon>202108162122175_eko.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108171802000_prijava.cs" />
-    <Compile Include="Migrations\202108171802000_prijava.Designer.cs">
-      <DependentUpon>202108171802000_prijava.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108171909526_staro.cs" />
-    <Compile Include="Migrations\202108171909526_staro.Designer.cs">
-      <DependentUpon>202108171909526_staro.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108172129552_orggg.cs" />
-    <Compile Include="Migrations\202108172129552_orggg.Designer.cs">
-      <DependentUpon>202108172129552_orggg.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108172226369_aman.cs" />
-    <Compile Include="Migrations\202108172226369_aman.Designer.cs">
-      <DependentUpon>202108172226369_aman.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108180039480_doniraj.cs" />
-    <Compile Include="Migrations\202108180039480_doniraj.Designer.cs">
-      <DependentUpon>202108180039480_doniraj.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108190401528_forum.cs" />
-    <Compile Include="Migrations\202108190401528_forum.Designer.cs">
-      <DependentUpon>202108190401528_forum.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108192014218_date.cs" />
-    <Compile Include="Migrations\202108192014218_date.Designer.cs">
-      <DependentUpon>202108192014218_date.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202108192143406_again.cs" />
-    <Compile Include="Migrations\202108192143406_again.Designer.cs">
-      <DependentUpon>202108192143406_again.cs</DependentUpon>
+    <Compile Include="Migrations\202108201810425_njd.cs" />
+    <Compile Include="Migrations\202108201810425_njd.Designer.cs">
+      <DependentUpon>202108201810425_njd.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Doniraj.cs" />
@@ -329,50 +273,8 @@
     <EmbeddedResource Include="Migrations\202108141157466_initial.resx">
       <DependentUpon>202108141157466_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108141546364_angazman2.resx">
-      <DependentUpon>202108141546364_angazman2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108141610215_going.resx">
-      <DependentUpon>202108141610215_going.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108161337035_update.resx">
-      <DependentUpon>202108161337035_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108161443344_opis.resx">
-      <DependentUpon>202108161443344_opis.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108161943159_pak.resx">
-      <DependentUpon>202108161943159_pak.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108162006006_update2.resx">
-      <DependentUpon>202108162006006_update2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108162122175_eko.resx">
-      <DependentUpon>202108162122175_eko.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108171802000_prijava.resx">
-      <DependentUpon>202108171802000_prijava.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108171909526_staro.resx">
-      <DependentUpon>202108171909526_staro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108172129552_orggg.resx">
-      <DependentUpon>202108172129552_orggg.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108172226369_aman.resx">
-      <DependentUpon>202108172226369_aman.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108180039480_doniraj.resx">
-      <DependentUpon>202108180039480_doniraj.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108190401528_forum.resx">
-      <DependentUpon>202108190401528_forum.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108192014218_date.resx">
-      <DependentUpon>202108192014218_date.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202108192143406_again.resx">
-      <DependentUpon>202108192143406_again.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202108201810425_njd.resx">
+      <DependentUpon>202108201810425_njd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Volunteering.Models.Kategorija>
+@{
+    ViewBag.Title = "Biznis";
+}
+
+<br />
+<br />
+<div class="breadcrumb" style="font-size:20px; border:solid; background-color:azure; border-color:white">
+    @Html.ActionLink("Home", "Index", "Home")
+    @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
+    }
+    @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+    }
+</div>
+<br />
+
+
+
+
+<div class="container" style="text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+
+    <h1 style="color: Highlight; text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 40px;">БИЗНИС</h1>
+    <br />
+    <br />
+
+
+    <div class="row">
+        <div class="col-xs-3">
+            <a class="nb" href="~/Organizacijas/Details/21">
+                <img src="https://innovationlab.mk/educamp/images/podrzuvaci/smartup.png" alt="Snow" style="background-color:white;height: 240px; width: 273px;  border-radius: 10px; ">
+
+            </a>
+        </div>
+
+       
+
+        <div class="col-xs-3">
+            <a class="nb" href="~/Organizacijas/Details/33">
+                <img src="https://experientiallearning.net/wp-content/uploads/listing-uploads/logo/2020/05/cefe-logo.png" alt="Snow" style="height: 240px; width: 273px;  border-radius: 10px; ">
+
+            </a>
+        </div>
+        
+    </div>
+    <br />
+
+</div>
+
+
+

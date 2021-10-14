@@ -1,0 +1,104 @@
+﻿@model IEnumerable<Volunteering.Models.Kategorija>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+<br />
+<br />
+<div class="breadcrumb" style="font-size:20px; border:solid; background-color:azure; border-color:white">
+    @Html.ActionLink("Home", "Index", "Home")
+    @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
+    }
+    @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+    }
+</div>
+<br />
+<div class="container">
+    <h1 style="color: Highlight; text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 40px;">КАТЕГОРИИ НА ОРГАНИЗАЦИИ</h1>
+    <br />
+    <br/>
+    <div class="search" style=" margin-left: 878px; margin-top: -36px;">
+        @*@using (Html.BeginForm("Index", "Kategorijas", FormMethod.Get))
+        {
+            @Html.TextBox("search")<input type="submit" style="margin-left: 190px; margin-top: -32px; width: 78px;" class="form-control" name="submit" value="Search" />
+
+        }*@
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-xs-3">
+            <a class="nb" href="~/Kategorijas/Ekologija">
+                <img src="https://media.istockphoto.com/photos/leaves-series-picture-id153265195?k=6&m=153265195&s=612x612&w=0&h=bgy_6UMiZWQMtfiwCdPwo29DaI1hK99zobNPfeMAv7I=" alt="Snow" style="height: 188px; width: 273px; border-radius: 10px; filter: brightness(50%) ">
+
+                <div class="centered" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size:40px; color:white">ЕКОЛОГИЈА</div>
+            </a>
+        </div>
+
+        <div class="col-xs-3">
+            <a class="nb" href="~/Kategorijas/Aktivizam">
+                <img src="https://news.virginia.edu/sites/default/files/article_image/youth_activism_header_3-2.jpg" alt="Snow" style="height: 188px; width: 273px;  border-radius: 10px; filter: brightness(50%)">
+
+                <div class="centered" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size:40px;color:white ">АКТИВИЗАМ</div>
+            </a>
+        </div>
+
+        <div class="col-xs-3">
+            <a class="nb" href="~/Kategorijas/Humanost">
+                <img src="https://chsroundup.com/wp-content/uploads/2019/03/peace-and-humanity-wallpaper-04-2xgvssszl67ci6kxt44vey-900x563.jpg" alt="Snow" style="height: 188px; width: 273px;  border-radius: 10px; filter: brightness(50%)">
+
+                <div class="centered" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size:40px; color:white ">ХУМАНОСТ</div>
+            </a>
+        </div>
+
+        <div class="col-xs-3">
+            <a class="nb" href="~/Kategorijas/Tehnologija">
+                <img src="https://c1.wallpaperflare.com/preview/386/749/243/business-code-coding-computer.jpg" alt="Snow" style="height: 188px; width: 273px;  border-radius: 10px; filter: brightness(50%)">
+
+                <div class="centered" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size:35px; color:white">ТЕХНОЛОГИЈА</div>
+            </a>
+        </div>
+    </div>
+
+    <br />
+    <div class="row">
+        <div class="col-xs-3">
+            <a class="nb" href="~/Kategorijas/Zdravstvo">
+                <img src="https://setaliste.com.mk/wp-content/uploads/2017/01/stetoskop-doktor-lekaryj56u56u56u56.jpg" alt="Snow" style="height: 188px; width: 273px;  border-radius: 10px; filter: brightness(50%) ">
+
+                <div class="centered" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size:40px;color:white ">ЗДРАВСТВО</div>
+            </a>
+        </div>
+
+        <div class="col-xs-3">
+            <a class="nb" href="~/Kategorijas/ZashtitaNaZivotnite">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1Y2-6H7JcXQ0py8eFM65QX4No4RZj6JuAiQ&usqp=CAU" alt="Snow" style="height: 188px; width: 273px;  border-radius: 10px; filter: brightness(50%) ">
+
+                <div class="centered" style=" position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 40px; text-align:center; color:white">ЖИВОТНИ</div>
+            </a>
+        </div>
+
+        <div class="col-xs-3">
+            <a class="nb" href="~/Kategorijas/Biznis">
+                <img src="https://img.freepik.com/free-photo/business-people-shaking-hands-together_53876-20488.jpg?size=626&ext=jpg" alt="Snow" style="height: 188px; width: 273px; border-radius: 10px; filter: brightness(50%)">
+
+                <div class="centered" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size:40px; color:white">БИЗНИС</div>
+            </a>
+        </div>
+
+        <div class="col-xs-3">
+            <a class="nb" href="~/Kategorijas/Kultura">
+                <img src="https://apollo.imgix.net/content/uploads/2017/04/Normski-2.jpg?auto=compress,enhance,format&crop=faces,entropy,edges&fit=crop&w=620&h=456" alt="Snow" style="height: 188px; width: 273px;  border-radius: 10px; filter: brightness(50%)">
+
+                <div class="centered" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size:40px; color:white">КУЛТУРА</div>
+            </a>
+        </div>
+    </div>
+</div>

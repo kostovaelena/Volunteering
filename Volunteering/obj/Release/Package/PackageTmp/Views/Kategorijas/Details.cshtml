@@ -1,0 +1,41 @@
+﻿@model Volunteering.Models.Kategorija
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br />
+<br />
+<div class="breadcrumb" style="font-size:20px; border:solid; background-color:azure; border-color:white">
+    @Html.ActionLink("Home", "Index", "Home")
+    @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
+    }
+    @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+    }
+</div>
+<br />
+
+<h2>Details</h2>
+
+<div>
+    <h4>Kategorija</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

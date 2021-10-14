@@ -1,0 +1,58 @@
+﻿@model Volunteering.Models.VolonterskiAngazman
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<br />
+<br />
+<div class="breadcrumb" style="font-size:20px; border:solid; background-color:azure; border-color:white">
+    @Html.ActionLink("Home", "Index", "Home")
+    @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
+    }
+    @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+    }
+</div>
+<br/>
+
+<div class="container" style=" background-color: rgb(13,151,250,0.3);
+        border: double;
+        border-color: white;
+        border-radius: 22px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+
+
+
+    <br />
+
+    <div class="eden">
+        <h2 style="text-align:center;color:white;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">ДЕТАЛИ ЗА НАСТАНОТ "@ViewBag.Naslov"</h2>
+
+
+
+        <hr />
+        <div class="heh" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">
+            <h1 style="text-align:center">
+                <img alt="" id="image1" src="@Model.Slika" style="height:330px; border:solid; border-color:white" width="300" />
+            </h1>
+            <br />
+
+
+            <h3 style="text-align:center;color:white; border:groove; background-color: #75D8F6;">
+                Настанот "@Html.DisplayFor(model => model.Naslov)" ќе се одвива во @Html.DisplayFor(model => model.Mesto) на @Html.DisplayFor(model => model.Datum) со почеток во @Html.DisplayFor(model => model.Vreme)
+                часот. Организатор на настанот е "<i><b>@Html.DisplayFor(model => model.Organizacija)</b></i>". Право на учество имаат лица од сите возрасни групи. Бидете и вие дел од оваа акција. Ве очекуваме !!!
+            </h3>
+            <br />
+            <h3 style="text-align:center; color:ghostwhite;">Доколку имате некои дополнителни прашања, контактирајте не @Html.ActionLink("ТУКА", "Contact", "Home") </h3>
+            <a href="~/VolonterskiAngazman/Index" class="btn btn-default" style="font-size: 18px; margin-left: 11px; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Назад</a>
+        <br/>
+
+        </div>
+    </div>
+    <br/>
+
+</div>

@@ -1,0 +1,177 @@
+﻿@{
+    ViewBag.Title = "Contact";
+
+
+    if (Request.UrlReferrer != null)
+    {
+        string returnURL = Request.UrlReferrer.ToString();
+        ViewBag.ReturnURL = returnURL;
+    }
+}
+
+<br />
+<br />
+<div class="breadcrumb" style="font-size:20px; border:solid; background-color:azure; border-color:white">
+    @Html.ActionLink("Home", "Index", "Home")
+    @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
+    }
+    @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+    }
+</div>
+<br />
+<br />
+<div class="container" style="background-color:rgb(13,151,250,0.3);font-size:22px; border:double; border-color:white;color:white;border-radius: 22px;font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+
+    <h1 style="color: white; text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 40px;">КОНТАКТ ЦЕНТАР</h1>
+
+    <br />
+        <br />
+    <div class="col-md-6">
+        <div>
+            <h5 style="font-size: 25px;color:Highlight"><strong><i>Седиште на канцеларијата</i></strong></h5>
+        </div>
+        <div style="float:left; width: 50px; height:40px;"><img src="https://www.dzlp.mk/sites/default/files/pictures/adresa.png" style="-webkit-user-select:none; width:32px; height:32px;"></div>
+        <div>
+            <strong>  ул. "Илинденска" бр.8  </strong>
+        </div>
+        <div><strong>1000 Скопје</strong></div>
+
+        <br />
+
+        <div>
+            <h5 style="font-size: 25px;color:Highlight"><strong><i>Email</i></strong></h5>
+        </div>
+        <div style="float:left; width: 50px; height:40px;"><img src="https://www.dzlp.mk/sites/default/files/pictures/email.png" style="-webkit-user-select:none; width:32px; height:32px;"></div>
+        <div>
+            <strong>
+                team@gmail.com
+            </strong>
+        </div>
+
+        <br />
+
+        <div>
+            <h5 style="font-size: 25px;color:Highlight"><strong><i>Телефон за контакт:</i></strong></h5>
+        </div>
+        <div style="float:left; width: 50px; height:40px;"><img src="https://www.dzlp.mk/sites/default/files/pictures/telefon.png" style="-webkit-user-select:none; width:32px"></div>
+        <div>
+            <strong>
+                075 / 632 - 652
+            </strong>
+        </div>
+
+    <br/>
+        <br />
+        <p>
+            <a href="@ViewBag.ReturnURL" class="btn btn-default" style="font-size:18px; text-align:end">Назад</a>
+        </p>
+    </div>
+
+
+
+    <div class="col-md-6">
+        <h4 style="color: Highlight;margin-left: 97px; font-size:34px;  text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; "><strong><i>Пријави нерегуларности</i></strong></h4>
+        
+        <br />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-horizontal">
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <h3 style="color:white ;margin-top: -4px; font-size:34px; text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">Организација</h3>
+                    </div>
+
+                    <div class="col-md-6" style="margin-left: 104px; ">
+                        @Html.DropDownList("organisations", new List<SelectListItem>
+                     {
+                         new SelectListItem{ Text="Организации", Value = "0" , Disabled = true, Selected = true},
+                         new SelectListItem{ Text="Биди Зелен", Value = "1" },
+                         new SelectListItem{ Text="Ајде Македонија", Value = "2" },
+                         new SelectListItem{ Text="Не биди ѓубре", Value = "3" },
+                         new SelectListItem{ Text="Еко - логик", Value = "4" },
+                         new SelectListItem{ Text="Е.Д.Е.Н", Value = "5" },
+                         new SelectListItem{ Text="Охрид SOS", Value = "6" },
+                         new SelectListItem{ Text="Meѓаши", Value = "7" },
+                         new SelectListItem{ Text="Ин Виво Скопје", Value = "8" },
+                         new SelectListItem{ Text="Креактив", Value = "9" },
+                         new SelectListItem{ Text="НаТочак", Value = "10" },
+                         new SelectListItem{ Text="КРИК", Value = "11" },
+                         new SelectListItem{ Text="Младински Образовен Форум", Value = "12" },
+
+                         new SelectListItem{ Text="Младите можат", Value = "13" },
+                         new SelectListItem{ Text="Секој студент", Value = "14" },
+                         new SelectListItem{ Text="Црвен Крст", Value = "15" },
+                         new SelectListItem{ Text="Вистински дела на љубезност", Value = "16" },
+                         new SelectListItem{ Text="Ретвитни оброк", Value = "17" },
+                         new SelectListItem{ Text="Ц.С.И.Надеж", Value = "18" },
+                         new SelectListItem{ Text="Eestec", Value = "19" },
+                         new SelectListItem{ Text="SmartUp", Value = "20" },
+                         new SelectListItem{ Text="WeTalkIT", Value = "21" },
+                         new SelectListItem{ Text="Споделено знаење", Value = "22" },
+                         new SelectListItem{ Text="Јава Корисничка група", Value = "23" },
+                         new SelectListItem{ Text="Х.Е.Р.А", Value = "24" },
+
+                         new SelectListItem{ Text="Зона - Кавадарци", Value = "25" },
+                         new SelectListItem{ Text="ЕМСА - Македонија", Value = "26" },
+                         new SelectListItem{ Text="Анима Мунди", Value = "27" },
+                         new SelectListItem{ Text="Анималиа", Value = "28" },
+                         new SelectListItem{ Text="Кане Корзо", Value = "29" },
+                         new SelectListItem{ Text="Ние За Животните", Value = "30" },
+                         new SelectListItem{ Text="ЦЕФЕ Македонија", Value = "31" },
+                         new SelectListItem{ Text="Буден Театар", Value = "32" },
+                         new SelectListItem{ Text="Џифони", Value = "33" },
+                         new SelectListItem{ Text="CRE8IVE8", Value = "34" },
+                         new SelectListItem{ Text="615 Асоцијација", Value = "35" },
+                         new SelectListItem{ Text="МАКЕДОКС", Value = "36" },
+                         new SelectListItem{ Text="Македонска Кјубинг Асоцијација", Value = "37" },
+                         new SelectListItem{ Text="Клуб на Оратори", Value = "38" },
+                         new SelectListItem{ Text="Младински Образовен Форум", Value = "39" },
+                     }, new { @class = "form-control" })
+                    </div>
+
+                </div>
+
+                <br />
+
+
+                <div class="form-group">
+                    <div class="col-md-3">
+                        <h3 style="color:white ;margin-top: -4px; font-size:34px; text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">Жалба</h3>
+                    </div>
+                    <div class="col-md-6" style="margin-left: 104px; ">
+                        <textarea class="form-control" placeholder="Напишете жалба.." style="height: 150px;"></textarea>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-3">
+                    <input type="submit" value="Пријави" onclick='return funk()' class="btn btn-danger" style="font-size:20px; margin-left: 234px;" />
+                </div>
+            </div>
+
+        }
+
+
+
+    </div>
+
+
+    </div>
+<script>
+    function funk() {
+        var r = confirm("Дали сте сигурни?");
+        if (r == true) {
+            alert("Вашата пријава ќе биде разгледана од креаторите на страната. Ви благодариме!");
+        }
+        @*window.location = "@Url.Action("Index","Home")*@
+    }
+</script>

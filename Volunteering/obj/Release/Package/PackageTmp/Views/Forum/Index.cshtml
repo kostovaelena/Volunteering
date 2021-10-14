@@ -1,0 +1,96 @@
+﻿@model IEnumerable<Volunteering.Models.Forum>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<br />
+<br />
+<div class="container" style=" background-color: rgb(13,151,250,0.3);
+        border: double;
+        border-color: white;
+        border-radius: 22px;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">
+
+    <h1 style="color: white; text-align: center; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; font-size: 40px;">ДОБРЕДОЈДОВТЕ ВО ФОРУМОТ</h1>
+
+
+    <br />
+    <br />
+    <div class="search" style=" margin-left: 876px; margin-top: -36px;">
+        @using (Html.BeginForm("Index", "Forum", FormMethod.Get))
+        {
+            @Html.TextBox("search")<input type="submit" style="margin-left: 183px; margin-top: -32px; width: 78px;" class="form-control" name="submit" value="Search" />
+
+        }
+        <br />
+        <br />
+    </div>
+    @foreach (var item in Model)
+    {
+        <div class="row clearfix">
+            <div class="col-md-12 column">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <section class="panel-title">
+                            <time class="pull-right" style="margin-top: -12px;">
+                                <i class="fa fa-calendar"></i> @Convert.ToDateTime(DateTime.Now).ToShortDateString()
+                                <i class="fa fa-clock-o"></i> @DateTime.Now.ToLocalTime().ToShortTimeString()
+
+                            </time>
+                            <section class="pull-left" style="margin-top: -12px;" id="id">
+                                <abbr title="count of posts in this topic">#@item.Id</abbr>
+                            </section>
+                        </section>
+                    </div>
+                    <section class="row panel-body">
+                        <section class="col-md-9">
+                            <h3> <i class="fa fa-smile-o"></i>  @item.Comment</h3>
+
+
+                        </section>
+
+                        <section id="user-description" class="col-md-3 ">
+                            <section class="well">
+                                <div class="fff" style="font-size:18px">
+                                    @*<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cricle"></i><h4>@item.Ime</h4><span class="caret"></span></a>
+                                    *@
+                                    <i class="fa fa-user "></i> @item.Ime
+
+                                </div>
+
+                            </section>
+                        </section>
+
+                    </section>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <section class="col-md-2 ">
+                                <i class="fa fa-thumbs-up "></i><a href="#" onclick="alert('Ви благодариме за лајкот :)')"> Like </a>| <i class="fa fa-warning "></i><a href="#" onclick="alert('Вашата пријава ќе биде разгледана од креаторите на страната. Ви благодариме!')"> Report </a>
+                            </section>
+
+                            <section class="col-md-10">
+
+                                <i class="fa fa-edit "></i><a href="~/Forum/Edit/@item.Id"> Промени го коментарот </a> | <i class="fa fa-plus "></i><a href="~/Forum/Create"> Нов коментар </a> | <i class="fa fa-trash "></i><a href="~/Forum/Delete/@item.Id"> Избриши го коментарот </a>
+
+                            </section>
+                            @*  <section class="col-md-6">
+
+                                    <i class="fa fa-plus "></i><a href="~/Forum/Create"> Нов коментар </a> <i class="fa fa-trash "></i><a href="~/Forum/Create"> Избриши го коментарот </a>
+                                </section>
+                                <section class="col-md-3">
+
+                                    <i class="fa fa-trash "></i><a href="~/Forum/Create"> Избриши го коментарот </a>
+                                </section>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+
+
+</div>

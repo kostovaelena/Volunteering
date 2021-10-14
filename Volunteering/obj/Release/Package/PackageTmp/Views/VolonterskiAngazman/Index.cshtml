@@ -1,0 +1,76 @@
+﻿@model IEnumerable<Volunteering.Models.VolonterskiAngazman>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<br />
+<div class="breadcrumb" style="font-size:20px; border:solid; background-color:azure; border-color:white">
+    @Html.ActionLink("Home", "Index", "Home")
+    @if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["controller"].ToString(), "Index", ViewContext.RouteData.Values["controller"].ToString())
+    }
+    @if (ViewContext.RouteData.Values["action"].ToString() != "Index")
+    {
+        @:> @Html.ActionLink(ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values["controller"].ToString())
+    }
+</div>
+<br />
+<br />
+<div class="create" style="font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; ">
+
+    <a href="~/VolonterskiAngazman/Create" class="btn btn-warning" style="margin-left: 71px; margin-top: -12px; padding-right: 28px; font-size: 23px; padding-left: 29px; ">Додади нов волонтерски ангажман</a>
+
+    @*<form class="d-flex" style=" margin-left: 744px; margin-top: -39px;">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-success" style=" margin-left: 291px; margin-top: -56px;" type="submit">Search</button>
+        </form>*@
+    <div class="search" style=" margin-left: 756px; margin-top: -36px;">
+        @using (Html.BeginForm("Index", "VolonterskiAngazman", FormMethod.Get))
+        {
+            @Html.TextBox("search")<input type="submit" style="margin-left: 183px; margin-top: -32px; width: 78px;" class="form-control" name="submit" value="Search" />
+
+        }
+    </div>
+
+</div>
+
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <div class="card" style="width: 27rem;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color:white; height:543px; border:double;border-color:white;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; background-color:#C0DCEE; border-radius: 17px;">
+                <img class="card-img-top" src="@item.Slika" style="height: 282px; width: 265px;  border-radius: 17px;" alt="Card image cap">
+                <div class="card-body">
+
+                    <h2 class="card-title" style="text-align:center;">@item.Naslov</h2>
+                    <h4 class="card-text">Локација: @item.Mesto</h4>
+                    <h4 class="card-text">Датум: @item.Datum</h4>
+                    <h4 class="card-text">Време: @item.Vreme часот</h4>
+                    <h4 class="card-text">Организира: <i><b style="color:Highlight">@item.Organizacija</b></i></h4>
+                    <hr style="background-color:cornflowerblue" />
+                    <a href="~/VolonterskiAngazman/Details/@item.Id" class="btn btn-info" style="margin-left:11px;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">Види детали</a>
+                    <a href="#" class="btn btn-success" onclick="return going()" style="margin-left: 136px; margin-top: -63px; padding-right: 28px; font-size: 23px; padding-left: 29px; ">Going</a>
+                    <br />
+                </div>
+            </div>
+
+        </div>
+
+    }
+</div>
+<script>
+    function going() {
+        var r = confirm("Дали сте сигурни?");
+        if (r == true) {
+            alert("Одлична одлука! Ве очекуваме на настанот :D");
+        }
+        @*window.location = "@Url.Action("Index","Home")*@
+    }
+</script>
